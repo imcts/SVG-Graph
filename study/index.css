@@ -1,0 +1,169 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+svg {
+    width: 100%;
+    height: 120px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+/* rect */
+.rect1 {
+    x: 0;
+    y: 5px;
+    width: 100px;
+    height: 100px;
+    fill: red;
+    viewBox: 0 0 200px 200px;
+}
+
+.rect2 {
+    x: 105px;
+    y: 5px;
+    width: 100px;
+    height: 100px;
+    stroke-width: 5px;
+    stroke: blue;
+}
+
+.rect3 {
+    x: 215px;
+    y: 5px;
+    width: 100px;
+    height: 100px;
+    stroke-width: 5px;
+    fill: yellow;
+    stroke: red;
+}
+
+.rect4 {
+    x: 325px;
+    y: 5px;
+    width: 100px;
+    height: 100px;
+    stroke-width: 5px;
+    fill: green;
+    stroke: red;
+    stroke-dasharray: 20px, 5px, 20px, 3px;
+    stroke-dashoffset: 100;
+}
+
+.rect5 {
+    x: 435px;
+    y: 5px;
+    width: 100px;
+    height: 100px;
+    stroke-width: 5px;
+    fill: blue;
+    stroke: red;
+    rx: 45%;
+    ry: 5%;
+}
+
+.rect6 {
+    x: 545px;
+    y: 5px;
+    width: 100px;
+    height: 100px;
+    fill: purple;
+    fill-opacity: 0.7;
+    stroke: red;
+    stroke-width: 15px;
+    stroke-opacity: 0.5;
+}
+
+/* circle */
+.circle1 {
+    cx: 55;
+    cy: 55;
+    r: 50px;
+    fill: red;
+}
+
+.circle2 {
+    cx: 160;
+    cy: 55;
+    r: 50px;
+    stroke: blue;
+    stroke-width: 5px;
+}
+
+.circle3 {
+    cx: 270;
+    cy: 55;
+    r: 50px;
+    fill: yellow;
+    stroke: red;
+    stroke-width: 5px;
+}
+
+.circle4 {
+    cx: 380;
+    cy: 55;
+    r: 50px;
+    fill: green;
+    stroke: red;
+    stroke-width: 5px;
+    stroke-dasharray: 10px;
+    stroke-dashoffset: 1;
+}
+
+/*
+    1. 원의 둘레를 구하는 방법은 지름 * 3.14 (원주율)
+    2. dasharray의 사용법
+        - dasharray: [라인, 갭, 라인, 갭...]
+        - dasharray: value; === dasharray: value, value;
+    3. dasharray에 원주율만큼 그리고 원주율만큼 공백라인을 그린다면 그래프를 표시할 수 있지 않을까.
+    4. dasharray의 첫번째 값에 총 원의 둘레의 % 값만큼을 할당하고, 뒤에 gap에 원주율만큼의 공백을 두면 차트를 그릴 수 있겠다.
+*/
+.circle5 {
+    cx: 490px;
+    cy: 55px;
+    r: 50px;
+    fill: none;
+    stroke: red;
+    stroke-width: 5px;
+    stroke-dasharray: 0px, 314px;
+    /*
+        1. 꽉찬 파이차트를 그리려면, stroke-width 반지름의 두배만큼 해야한다.
+        2. 그렇기때문에 반지름도 원래 표현하고자 하는 원의 둘레보다 작아져야 한다.
+        3. 
+    */
+    transform-origin: 490px 55px;
+    transform: rotate(-90deg);
+    animation: chart 1000ms cubic-bezier(1, 0.7, 0.5, 1) forwards;
+}
+
+@keyframes chart {
+    0% {
+        stroke-dasharray: 0, 314px;
+    }
+    100% {
+        stroke-dasharray: 314px, 314px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
