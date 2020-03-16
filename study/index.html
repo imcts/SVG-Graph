@@ -54,12 +54,23 @@
     </svg>
       
     <p>4. 선을 그린다.</p>
-    <svg>
+    <svg id="line">
         <line class="line1" x1="0" y1="0" x2="100" y2="50"></line>
         <line class="line2" x1="100" y1="0" x2="200" y2="50"></line>
         <line class="line3" x1="200" y1="0" x2="300" y2="50"></line>
         <line class="line4" x1="300" y1="0" x2="400" y2="50"></line>
     </svg>
+      
+    <script>
+        var svg = document.getElementById('line')
+        var line = document.createElementNS('http://www.w3.org/2000/svg','line')
+        line.classList.add('line5')
+        line.setAttribute('x1', "400")
+        line.setAttribute('y1', "0")
+        line.setAttribute('x2', "500")
+        line.setAttribute('y2', "50")
+        svg.append(line)  
+    </script>
       
     <p>5. 경로를 그린다.</p>
     <svg>

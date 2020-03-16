@@ -231,6 +231,24 @@ text {
     stroke-linecap: round;
 }
 
+.line5 {
+    stroke: purple;
+    stroke-dasharray: 3px;
+    stroke-linecap: round;
+    stroke-dasharray: 111 111;
+    stroke-dashoffset: 111;
+    animation: line 1000ms ease-out forwards;
+}
+
+@keyframes line {
+    0% {
+        stroke-dashoffset: 111
+    }
+    100% {
+        stroke-dashoffset: 0
+    }
+}
+
 /* path */
 .path1 {
     stroke: red;
@@ -272,10 +290,10 @@ text {
     fill: none;
     stroke-dasharray: 750 750;
     stroke-dashoffset: 750;
-    animation: line 1000ms ease-out forwards;
+    animation: path 1000ms ease-out forwards;
 }
 
-@keyframes line {
+@keyframes path {
     0% {
         stroke-dashoffset: 750
     }
