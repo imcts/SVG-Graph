@@ -1,3 +1,4 @@
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -14,7 +15,6 @@ html, body {
 svg {
     width: 100%;
     height: 120px;
-    padding: 5px;
     border: 1px solid black;
 }
 
@@ -154,15 +154,152 @@ svg {
     }
 }
 
+/* text */
+text {
+    font-size: 15px;
+}
 
+.text--bold {
+    font-weight: bold;
+}
 
+.text1 {
+    transform: translate(0px, 15px);
+}
 
+.text2 {
+    fill: red;
+    transform: translate(0px, 35px);
+}
 
+.text3 {
+    font-size: 60px;
+    fill: yellow;
+    stroke: red;
+    stroke-width: 2px;
+    transform: translate(0px, 85px);
+}
 
+.text4 {
+    fill: green;
+    transform: translate(200px, 15px);
+}
 
+.text5 {
+    fill: green;
+    transform: translate(200px, 30px);
+}
 
+.text-wrapper {
+    
+}
 
+.text-wrapper.active .text-circle {
+    display: block
+}
 
+.text-circle {
+    display: none;
+    r: 30px;
+    fill: blue;
+    transform: translate(250px, 60px);
+}
+
+.text6 {
+    fill: green;
+    transform: translate(450px, 30px);
+}
+
+/* line */
+.line1 {
+    stroke: red;
+}
+
+.line2 {
+    stroke: blue;
+    stroke-width: 50px;
+}
+
+.line3 {
+    stroke: green;
+    stroke-dasharray: 3px;
+}
+
+.line4 {
+    stroke: purple;
+    stroke-dasharray: 3px;
+    stroke-linecap: round;
+}
+
+/* path */
+.path1 {
+    stroke: red;
+    fill: yellow;
+}
+
+.path2 {
+    stroke: red;
+    fill: yellow;
+}
+
+.path3 {
+    stroke-width: 3px;
+    stroke: blue;
+    fill: red;
+}
+
+.path4 {
+    stroke: red;
+    fill: none;
+}
+
+.path5 {
+    stroke: red;
+}
+
+.path6 {
+    stroke: red;
+    fill: yellow;
+}
+
+.path7 {
+    stroke: red;
+    fill: yellow;
+}
+
+.path8 {
+    stroke: red;
+    fill: none;
+    stroke-dasharray: 750 750;
+    stroke-dashoffset: 750;
+    animation: line 1000ms ease-out forwards;
+}
+
+@keyframes line {
+    0% {
+        stroke-dashoffset: 750
+    }
+    100% {
+        stroke-dashoffset: 0
+    }
+}
+
+.dot {
+    fill: red;
+    animation: dot 1000ms cubic-bezier(1, 0.7, 0.5, 1) forwards;
+}
+
+@keyframes dot {
+    0% {
+        opacity: 0
+    }
+    85% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
 
 
 

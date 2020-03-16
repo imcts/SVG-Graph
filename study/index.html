@@ -7,19 +7,6 @@
 </head>
 <body>
 <div id="content" class="content">
-  1. 선을 그려본다.
-  2. 동그라미를 그려본다.
-  3. 사각형을 그려본다.
-  4. 반원 및 여러 각도의 동그라미를 그려본다.
-  5. 문자를 사용해본다.
-  6. 선을 잘라 그려본다.
-  7. 선의 애니메이션 처리를 해 본다.
-  8. 동그라미를 돌려본다.
-  9. 동그라미가 그려지는 모습을 표현해 본다.
-  10. 문자열의 애니메이션 처리를 해본다.
-  11. 그래프를 그려본다.
-  12. 그래프가 그려진 시점을 알 수 있는지 확인한다.
-
   <div class="wrapper">
     <p>1. 사각형을 그린다.</p>
     <svg>
@@ -31,7 +18,7 @@
       <rect class="rect6"></rect>
     </svg>
 
-    <p>1. 동그라미를 그린다.</p>
+    <p>2. 동그라미를 그린다.</p>
     <svg>
       <circle class="circle1"></circle>
       <circle class="circle2"></circle>
@@ -40,7 +27,93 @@
       <circle class="circle5"></circle>
       <circle class="circle6"></circle>
     </svg>
+      
+    <p>3. 텍스트를 그린다.</p>
+    <svg>
+      <text class="text1">text string</text>
+      <text class="text2">fill red color</text>
+      <text class="text3">stroke</text>
+      <text class="text4">
+        <tspan class="text--bold">bold text</tspan>
+        <tspan dx="5px">dx 5px</tspan>  
+        <tspan dy="3px 5px 10px">multiple dy</tspan>
+      </text>
+      <defs>
+          <path id="text-path" d="M0,0 l0,20 a1,1 0 0,0 100,0"/>
+      </defs>       
+        <!--  active 활성화 가능   -->
+        <g class="text-wrapper active"> 
+            <circle class="text-circle"></circle>
+            <text class="text5">
+                <textPath xlink:href="#text-path" >Text along a curved path...</textPath>
+            </text>   
+        </g> 
+        <text class="text6">
+            <a href="http://www.naver.com" >A 태그 네이버로 이동</a>
+        </text>
+    </svg>
+      
+    <p>4. 선을 그린다.</p>
+    <svg>
+        <line class="line1" x1="0" y1="0" x2="100" y2="50"></line>
+        <line class="line2" x1="100" y1="0" x2="200" y2="50"></line>
+        <line class="line3" x1="200" y1="0" x2="300" y2="50"></line>
+        <line class="line4" x1="300" y1="0" x2="400" y2="50"></line>
+    </svg>
+      
+    <p>5. 경로를 그린다.</p>
+    <svg>
+        <path class="path1" d="M0,0 L100,50"></path>
+        <path class="path2" d="M110,0 L210,50 H110 V50 L110,0"></path>
+        <path class="path3" d="M220,10 h100 v50 h-100 v-50"></path>
+        <path class="path4" d="M330,10 Q380,50 430,10"></path>
+        <!--       
+            A 반지름x, 반지름y, x축기준회전값, 호플래그값, 쓸기방향플래그값, 완료좌표x, 완료좌표y
+            A x, y :시작지점부터 종료지점x,y 까지의 절반의 반지름값. 비율로도 가능하다.
+            -45: x 축을 기준으로하는 rotation 지수
+        -->
+        <path class="path5" d="M440,10 A1 3, 45, 0, 0, 540 10"/>
+        <path class="path6" d="M550,50 A1 1, 0, 0, 1, 650 50"/>
+        <!--        
+            M660, 50 -> 760, 50 이라면 보여질 수 있는 영역은 가로 100 세로 50이다.
+            그런데 A70, 70으로 설정했기 때문에 표현할 수 있는 반지름보다 더 커지게 된다. 
+            그렇기 때문에 반지름을 70에 70으로 설정하고 원을 아래로 내리게 된다. 
+        -->
+        <path class="path7" d="M660,50 A70 70, 0, 1, 0, 760 50"/>
+      </svg>
+      
+      <p>5. 경로를 그린다.</p>
+      <svg>
+          <defs>
+            <marker id="dot" markerWidth="8" markerHeight="8" refX="5" refY="5">
+                <circle class="dot" cx="5" cy="5" r="3"/>
+            </marker>
+          </defs>
+          <path class="path8" d="M0, 0 
+                                 L100,50 
+                                 200,70 
+                                 300,50 
+                                 400,60 
+                                 500,90 
+                                 600,10 
+                                 700,30" 
+                marker-start="url(#dot)" marker-mid="url(#dot)" marker-end="url(#dot)"></path>
+      </svg>
   </div>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
