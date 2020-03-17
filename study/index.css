@@ -142,10 +142,66 @@ svg {
     */
     transform-origin: 490px 55px;
     transform: rotate(-90deg);
-    animation: chart 1000ms cubic-bezier(1, 0.7, 0.5, 1) forwards;
+    animation: chart-full 1000ms cubic-bezier(1, 0.7, 0.5, 1) forwards;
 }
 
-@keyframes chart {
+/*
+    이걸 애니메이션이 아닌 promise로 구현한다. 
+    시작 원이 먼저 그려진다.
+    시작할 deg지점: -90은 0의 위치가 된다.
+    70퍼센트의 길이: 선의 총길이 314px / 100 * 70 => 219.8px
+*/
+.circle6 {
+    cx: 600px;
+    cy: 55px;
+    r: 50px;
+    fill: transparent;
+    stroke: #4a90e2;
+    stroke-width: 10px;
+    stroke-dasharray: 219.8px, 314px;
+    transform-origin: 600px 55px;
+    transform: rotate(-90deg);
+    animation: chart-seventy 330ms linear forwards;
+}
+
+/*
+    앞의 차트 그래프가 0부터 70퍼센트 이동했으므로, 그 마지막지점이 내가 시작할 원의 지점이다. 
+    시작할 deg지점: -90 + 360 / 100 * 70 === 162deg
+    20퍼센트의 길이: 선의 총길이 314px / 100 * 20 => 62.800000000000004px
+*/
+.circle7 {
+    cx: 600px;
+    cy: 55px;
+    r: 50px;
+    fill: transparent;
+    stroke: black;
+    stroke-width: 10px;
+    stroke-dasharray: 62.800000000000004px, 314px;
+    transform-origin: 600px 55px;
+    transform: rotate(162deg);
+    animation: chart-twenty 330ms linear forwards;
+}
+
+/*
+    앞의 차트 그래프가 0부터 90퍼센트 이동했으므로, 그 마지막지점이 내가 시작할 원의 지점이다. 
+    시작할 deg지점: -90 + 360 / 100 * 90 === 234deg
+    20퍼센트의 길이: 선의 총길이 314px / 100 * 10 => 31.400000000000002px
+*/
+.circle8 {
+    cx: 600px;
+    cy: 55px;
+    r: 50px;
+    fill: transparent;
+    stroke: #d2d3d4;
+    stroke-width: 10px;
+    stroke-dasharray: 31.400000000000002px, 314px;
+    transform-origin: 600px 55px;
+    transform: rotate(234deg);
+    animation: chart-ten 330ms linear forwards;
+}
+
+
+@keyframes chart-full {
     0% {
         stroke-dasharray: 0, 314px;
     }
@@ -153,6 +209,35 @@ svg {
         stroke-dasharray: 314px, 314px;
     }
 }
+
+@keyframes chart-twenty {
+    0% {
+        stroke-dasharray: 0, 314px;
+    }
+    100% {
+        stroke-dasharray: 62.800000000000004px, 314px;
+    }
+}
+
+@keyframes chart-seventy {
+    0% {
+        stroke-dasharray: 0, 314px;
+    }
+    100% {
+        stroke-dasharray: 219.8px, 314px;
+    }
+}
+
+@keyframes chart-ten {
+    0% {
+        stroke-dasharray: 0, 314px;
+    }
+    100% {
+        stroke-dasharray: 31.400000000000002px, 314px;
+    }
+}
+
+
 
 /* text */
 text {
