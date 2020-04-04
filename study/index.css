@@ -373,14 +373,14 @@ text {
 .path8 {
     stroke: red;
     fill: none;
-    stroke-dasharray: 750 750;
-    stroke-dashoffset: 750;
+    stroke-dasharray: 648.7284545898438, 648.7284545898438;
+    stroke-dashoffset: 648.7284545898438;
     animation: path 1000ms ease-out forwards;
 }
 
 @keyframes path {
     0% {
-        stroke-dashoffset: 750
+        stroke-dashoffset: 648.7284545898438
     }
     100% {
         stroke-dashoffset: 0
